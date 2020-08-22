@@ -36,4 +36,41 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
+    public function post(){
+
+        return $this->hasOne('App\Post');
+        //return $this->hasOne('App\Post', 'uid'); specify other column name, user_id = standard
+
+    }
+
+    public function posts(){
+
+        return $this->hasMany('App\Post');
+    }
+
+    
+    public function photos(){
+
+        return $this->morphMany('App\Photo','imageable');
+
+    }
+
+    public function roles(){
+        return $this->belongsToMany('App\Role')->withPivot('created_at');
+        //return $this->belongsToMany('App\Role','user_roles','user_id','role_id'); specify different column
+    }
+
+    public function getNameAttribute($value){
+
+        return str_replace("Ronaldo", "Hoi", $value);
+    }
+
+    public function setNameAttribute($value){
+
+        $this->attributes['name']=$name = strtoupper($value);
+        
+
+    }
 }
