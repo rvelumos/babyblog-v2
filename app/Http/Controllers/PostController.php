@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
-    }
+    $posts = Post::orderBy('id', 'asc')->get();
+    
+   // dd($posts);
+     return view('post', compact('posts'));
 
-    /**
+       /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    }
+
     public function create()
     {
         //
@@ -45,7 +45,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        return view('post.show', compact('post'));
     }
 
     /**

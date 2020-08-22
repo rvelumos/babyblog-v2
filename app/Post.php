@@ -11,26 +11,25 @@ class Post extends Model
     public $directory = "/images/";
     use SoftDeletes;
     //
-    protected $dates = ['deleted_at'];
 
     protected $fillable = [
 
-        'test_text',
-        'description',
-        'path',        
+        'title',
+        'body',
+        'image_path',        
         'status'
 
     ];
 
-    public function user(){
+    //public function user(){
 
-        return $this->belongsTo('App\User');
+      //  return $this->belongsTo('App\User');
 
-    }
+    //}
 
     public function photos(){
 
-        return $this->morphMany('App\Photo','imageable');
+        return $this->belongsTo('App\Photoalbum');
         
     }
 
