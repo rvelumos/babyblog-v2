@@ -1,0 +1,640 @@
+@charset "iso-8859-1";
+
+
+html {
+	margin:0px;	
+	padding:0px;
+}
+
+
+body {	
+	font-family:verdana;
+	font-size:13px;
+	line-height:20px;
+	margin:0px;
+	overflow-x:hidden;
+	text-align:center;
+	width:100%;
+}
+
+img{
+	border:0px;	
+
+}
+
+.image img{
+	border: 1px solid #59a6c4;
+	margin:30px;
+}
+
+a{
+		outline:none;
+}
+
+p{
+	color:#666;
+	font-family: verdana;
+	font-size:14px;	
+	line-height:18px;
+}
+
+textarea{
+	width:350px;
+	height:200px;
+}
+
+.submit{
+	border:2px dashed #59a6c4;
+	color:#59a6c4;
+	cursor:hand;
+	font-weight:bold;
+	margin-top:7px;
+	background-color:#d8eefa;
+	padding:5px;
+}
+
+.input_error{
+	background-color:#f8d8d8!important;	
+	border: 1px solid red;
+}
+
+p.field_error{
+	color:red;
+	font-size:12px;
+	padding:0px;
+	margin:0px;
+}
+
+p.menu_link{
+	float:left;
+	margin:0px;
+}
+
+
+p.menu_link a{
+	background-color:#d8eefa;
+	border:3px dashed white;
+	float:left;
+	font-weight:bold;
+	margin:3px 20px;
+	padding: 5px 20px;
+	text-decoration:none;
+	color:#95B3C4;
+}
+
+p.menu_link a:hover{
+	background-color:#EDF3FF;
+	text-decoration:none;
+	color:#aba;
+}
+
+div.bg_holder{
+	background-image:url(../images/bg_top.png);
+	height:259px;
+	margin: 0 auto 0 auto;
+	overflow:hidden;
+	width: 1197px;
+}
+
+div.main_container{
+	background-image:url(../images/middle_repeat.png);
+	background-repeat:repeat-y;
+	min-height:100px;
+	overflow:auto;		
+	width: 1197px;
+}
+
+div.main_container div.top_container{
+	margin: 0 auto 0 auto;
+	max-width:925px;
+}
+
+div.main_container div.top_container table.zoekform{
+	float:right;	
+}
+
+div.main_container div.top_container table.zoekform input{
+	background-color:#d8eefa;
+	border: 3px dashed white;
+	color:#99a6c4;	
+}
+
+div.main_container div.top_container table.zoekform .submit{	
+  max-width:80px;
+}
+
+div.main_container div.top_container table.zoekform .field{
+	background-color:#efefef;
+	color:#bbb;
+}
+
+div.main_container div.top_container div.menu_content{
+	background-color:#d8eefa;
+	float:left;
+	height:40px;
+	width:895px;
+}
+
+div.main_container div.extra_container{
+	margin:0px auto;
+	text-align:left;
+	width:859px;
+}
+
+div.main_container div.left_container{
+	float:left;
+	margin-left:20px;
+	text-align:left;
+	width:650px;
+}
+
+div.main_container div.right_container{
+	float:right;
+	text-align:left;
+	max-width:150px;
+}
+
+div.main_container div.right_container .titel{
+	color:#59a6c4;
+	font-size:14px;
+	font-weight:bold;
+}
+
+div.main_container div.right_container div.archive ul li{
+	list-style:none;
+	list-style-image:url('https://www.ronald-designs.nl/babyblog/images/arrow_right.gif');
+}
+
+div.main_container div.right_container div.category a,
+div.main_container div.right_container div.archive ul li a{
+	color:#99a6c4;
+	font-size:12px;
+	text-decoration:none;
+}
+
+div.main_container div.right_container div.category a:hover,
+div.main_container div.right_container div.archive ul li a:hover{
+	color:#666;
+}
+
+
+/***** poll *****/
+
+div.poll{
+	-moz-border-radius:1em;
+	background-color:#eee;
+	border:1px solid #ddd;
+	float:left;
+	height:150px;
+	padding-right:10px;
+	width:200px;
+}
+
+div.poll .error{
+	color:red;
+	font-size:10px;
+	margin-left:10px;
+	padding:0px;
+}
+
+div.poll_top{
+	color:#666;
+
+}
+
+div.poll div.poll_answer{
+	clear:both;
+	color: #666;
+	float:left;	
+	width:200px;
+}
+
+div.poll div.poll_bottom{
+	float:left;	
+}
+
+div.poll div.poll_bottom a{
+	color:#aaa;	
+}
+
+div.poll .submit{
+	float:left;	
+}
+
+div.poll div.poll_option{
+	clear:both;
+	float:left;	
+	width:190px;
+}
+
+div.poll .answer_left{
+	float:left;
+	font-size:12px;
+	margin-left:5px;
+	width:140px;
+}
+
+div.poll  .pct_right{
+	float:right;
+	width:30px;
+}
+
+div.poll div.line{
+	clear:both;
+	float:left;
+	height:8px;	
+}
+
+.poll_title{
+	color:#59A6C4;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.middle{
+	font-size: 12px;
+	text-align:center;
+}
+
+/***** blog items ****/
+
+div.content_items{
+	padding:10px 10px 10px 0px;	
+}
+
+div.blog_item{
+	float:left;
+	width: 600px;
+}
+
+div.blog_item .blog_top{
+	float:left;
+	padding:5px;
+	width:100%;
+}
+
+div.blog_item .blog_top .top_titel a{
+	color:#59a6c4;
+	float:left;
+	font-size:16px;
+	font-weight:bold;
+	line-height:20px;
+	margin: 5px 5px 0px 5px;
+	text-decoration:none;
+	width:100%;
+}
+
+div.blog_item .blog_top .top_datum{
+	color:#999;
+	clear:left;
+	float:left;
+	font-size:10px;
+	margin: 0px 5px;
+	width:100%;
+}
+
+div.blog_item div.blog_middle{
+	float:left;
+	margin:20px 5px;
+	width:95%;
+}
+
+div.blog_item .image .ieshadow1{
+	float:left;
+}
+
+div.image_content div.reacties,
+div.blog_item div.reacties{
+	clear:left;
+	color:#666;
+	font-size:11px;
+	margin: 15px 0px;
+	float:left;
+}
+
+div.image_content div.omschrijving{
+	clear:both;
+	float:left;	
+}
+
+div.image_content .tape_top{
+	position:relative;
+	margin-left:-350px;
+}
+
+div.image_content .tape_bot{
+	position:absolute;
+	left:37%;
+	bottom:5px;
+}
+
+p.medium_titel{
+	color:#59a6c4;
+	font-weight:bold;
+	font-size:12px;
+}
+
+table.reactie_form{
+	clear:both;
+	float:left;
+	font-size:11px;
+}
+
+table.reactie_form textarea,
+table.reactie_form input.form_field{
+	background-color:#eff8fd;
+	border: 1px dashed #59a6c4;
+	color:#59a6c4;
+	padding:5px;
+}
+
+div.blog_item div.line{
+	background-image:url('../images/line_repeat.png');
+	background-repeat:repeat-x;
+	clear:left;
+	float:left;
+	height:40px;
+	width:590px;
+}
+
+div.bottom_nav{
+	float:left;
+	margin:20px 0 0 10px;
+	vertical-align:bottom;
+	width:100%;	
+}
+
+div.older{
+	float:left;
+	width:200px;	
+}
+
+div.newer a,
+div.older a{
+	color:#666;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+div.newer{
+		float:right;
+		text-align:right;
+		width:200px;
+}
+
+div.reactie_holder{
+	border: 1px solid #eaeaea;
+	float:left;
+	width:600px;
+	margin:12px 5px;
+}
+
+div.reactie_holder .reactie_top{
+	background-color:#eaeaea;
+	border-bottom:1px solid #eaeaea;
+	float:left;
+  max-width:580px;
+  padding:10px;
+	width:100%;
+}
+
+div.reactie_holder p{
+	margin:0px;
+	padding:0px;
+}
+
+div.reactie_holder .naam{
+	float:left;
+	font-size:12px;
+	color:#88a6c4;
+	margin:10px 5px;
+	width:350px;
+}
+
+div.reactie_holder .time{
+	color:#bbb;
+	float:right;
+	font-size:10px;
+	margin-top:10px;
+	width:150px;	
+}
+
+div.reactie_holder .reactie_midden{
+	clear:left;
+	float:left;
+	margin:3px 4px;
+		min-height:50px;
+  padding:10px;
+		width:580px;
+}
+
+div.blog_item table.reactie_form{
+	clear:left;
+	float:left;
+	width:600px;
+}
+
+div.blog_item table.reactie_form .medium_titel{
+	color:#99a6c4;
+	font-weight:bold;
+}
+
+div.blog_item div.reacties{
+	color:#59a6c4;
+}
+
+div.blog_item div.reacties a{
+	color:#59a6c4;
+	text-decoration:none;
+}
+
+div.blog_item div.blog_content{
+	color:#666;
+	float:left;
+}
+
+div.blog_item div.blog_content div.tekst{
+	margin:0px 0px 15px 0px;
+}
+
+
+/***** Foto album gedeelte *****/
+
+div.content_items div.crumble_path{
+	color:#59a6c4;
+	margin:10px 0 0 10px;	
+}
+
+div.content_items div.crumble_path a{
+		color:#666;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+div.content_items div.crumble_path a:hover{
+	color:#59a6c4;	
+}
+
+div.album_content{
+	/*border: 1px solid #d8eefa;*/
+	color:#666;
+	float:left;	
+	margin-top:10px;
+	margin-left:-20px;
+	min-height:300px;
+	width:900px;
+}
+
+
+div.album_content a{
+	text-decoration:none;	
+}
+
+div.album_top{
+	color:#59a6c4;
+	float:left;
+	font-size:16px;
+	font-weight:bold;
+	line-height:20px;
+	margin: 5px 5px 0px 10px;
+	text-decoration:none;	
+}
+
+span.album_details p,
+span.album_details{
+	color:#59a6c4 !important;
+	float:left;
+	font-size:11px !important;
+	font-weight:bold;
+	margin: 15px 5px 0px 10px;	
+	width:800px;
+}
+
+div.album_content div.tekst{
+	float:left;
+	margin:10px;	
+	width:auto;
+}
+
+div.album_content div.album,
+div.album_content div.album_items{
+	float:left;
+	padding:10px;	
+	width:900px;
+}
+
+div.album_content div.album{
+	margin-left:-10px;	
+}
+
+div.album_content div.album_items{
+	margin-left:10px;
+}
+
+div.album_content div.album div.album_item,
+div.album_content div.album_items div.album_item{
+	float:left;
+	font-weight:bold;
+	margin:15px 7px;
+	text-align:center;
+}
+
+
+div.album_content div.album div.album_item img,
+div.album_content div.album_items div.album_item img{
+	border:1px solid #ddd;
+	padding:5px 5px;
+  width:150px;
+}
+
+/*** IE CRAP dont you just love IE ***/
+div.album_content div.album div.album_item .ieshadow1,
+div.album_content div.album_items div.album_item .ieshadow1 {
+        margin: 10px;
+        background-color: rgb(68,68,68); /* Needed for IEs */
+
+        -moz-box-shadow: 2px 2px 8px rgba(68,68,68,0.6);
+        -webkit-box-shadow: 2px 2px 8px rgba(68,68,68,0.6);
+        box-shadow: 2px 2px 8px rgba(68,68,68,0.6);
+
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+        zoom: 1;
+}
+
+div.album_content div.album div.album_item .ieshadow1 .protectfromblur,
+div.album_content div.album_items div.album_item .ieshadow1 .protectfromblur {
+        position: relative; /* This protects the inner element from being blurred */
+        background-color: #fefefe;
+}
+
+div.album_content div.album div.album_item img:hover,
+div.album_content div.album_items div.album_item img:hover{
+	-moz-box-shadow: 1px 2px 5px #59a6c4;
+  	-webkit-box-shadow: 1px 2px 5px #59a6c4;
+  	box-shadow: 1px 2px 5px #59a6c4;
+}
+
+div.album_content div.album div.album_item a,
+div.album_content div.album_items div.album_item a{
+	color:#666;
+}
+
+div.album_content div.album div.album_item a:hover,
+div.album_content div.album_items div.album_item a:hover{
+	color:#59a6c4;
+}
+
+div.album_content div.album_items div.image_content{
+	float:left;
+	width:850px;
+}
+
+div.album_content div.album_items div.image_content div.image_holder{
+	float:left;
+	margin-bottom:20px;
+	padding:15px;
+	width:95%;
+}
+
+div.album_content div.album_items div.image_content div.image_holder img{
+	border:1px solid #ddd;
+	padding: 5px;
+  width:  98%
+}
+
+div.album_content div.album_items div.image_content div.image_details{
+	float:left;
+	font-size:11px;
+	margin-bottom:10px;
+	padding:15px;
+	width:250px;
+}
+
+div.album_content div.nav_bottom{
+	color:#666;
+	float:left;
+		font-weight:bold;
+	margin-top:25px;
+	text-align:center;
+	width:100%;
+}
+
+div.album_content div.nav_bottom a{
+	color:#ccc;
+}
+
+div.album_content div.nav_bottom a:hover{
+	color:#59a6c4;
+}
+
+div.album_content div.nav_bottom .number{
+	margin:5px;	
+}
+
+div.bottom_content{
+	background-image:url(../images/bg_bottom.png);
+	height:279px;
+	margin:0px auto;
+	width:1197px;
+}
