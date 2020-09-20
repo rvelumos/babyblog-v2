@@ -27,10 +27,10 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          @yield('content')
+          <!-- Page Heading -->          
 
-          <x-home-master></x-home-master>          
+          
+          @yield('content')
 
         </div>
         <!-- /.container-fluid -->      

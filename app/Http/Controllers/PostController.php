@@ -9,10 +9,13 @@ class PostController extends Controller
 {
     public function index()
     {
-    $posts = Post::orderBy('id', 'asc')->get();
+    $posts = Post::all();
     
-   // dd($posts);
-     return view('post', compact('posts'));
+    foreach($posts as $post){
+        echo $post->title;
+    }
+
+     return view('posts', compact('posts'));
 
        /**
      * Show the form for creating a new resource.
@@ -47,7 +50,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        return view('post.show', compact('post'));
+        return view('post', compact('post'));
     }
 
     /**

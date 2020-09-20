@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Post;
-use App\Photoalbum;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,10 +13,6 @@ use App\Photoalbum;
 |
 */
 
-//Route::get('/', function () {
-  //  return view('welcome');
-//});
-
-Route::get('/', 'PostController@index')->name('post.index');
-Route::get('/post/{id}', 'PostController@show')->name('post');
-//Route::get('/fotoalbum/', 'PhotoalbumController@index')->name('photoalbum.index');
+Route::get('/', function () {
+    return view('welcome');
+});
