@@ -3,12 +3,17 @@
     <p class="menu_link"><a href="{{route('admin.index')}}">Admin</a></p>
     <p class="menu_link"><a href="{{route('photoalbum.index')}}" >Fotoalbum</a></p>
     
-    <form method="get" enctype="multipart/form-data" name="zoek" action="https://www.ronald-designs.nl/babyblog/blog/zoek/?>" >
-            <table class="searchform">
-              <tr><td class='fields'>
-                <input type="text" class='field' name="zoekterm" value="Zoeken op blog..." onfocus="this.value=''"  />
-              </td></tr>
-            </table>
-    </form>
+    {!! Form::open(['method'=>'PUT', 'action'=> 'PostController@search']) !!}
+    
+    {{ csrf_field() }}
+    
+           <div class='form-group'>
+                {!! Form::label('search_field', 'Zoeken') !!}
+                {!! Form::text('search_field', null, ['class'=>'field']) !!}  
+                {!! Form::submit('Zoeken', ['class'=>'btn btn-primary']) !!}            
+            </div>                
+
+
+    {!! Form::close() !!}
 </div>
             

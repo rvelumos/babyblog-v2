@@ -80,10 +80,23 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
+
     public function destroy($id)
     {
         //
     }
+
+    public function search(request $request)
+     {
+
+        $search_phrase = $request->input('search_field');
+
+        $posts = Post::where('body', 'like', '%' . $search_phrase . '%')->get();
+        $count = $posts->count();
+
+        return view('posts.results', compact('search_phrase', 'posts', 'count'));
+     }
 
 
 

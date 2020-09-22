@@ -6,10 +6,10 @@
 
 @if(isset($search_phrase))
 
-<div class='search mx-5'>
-<h2>
-{{$count}} zoekresulaten op: {{$search_phrase}}
-</h2>
+<div class='search my-5 p-3 bg-light' style='float:left; width:98%'>
+<h5>
+Aantal gevonden zoekresultaten: <b>{{$count}}</b>. Je hebt gezocht op:<b> {{$search_phrase}}</b>
+</h5>
 </div>
 
 @endif
@@ -34,7 +34,7 @@
 <img class="img-fluid rounded" src="{{$post->image_path}}" alt="">
 
 <!-- Post Content -->
-<p class="lead">{{$post->body}}</p>
+<p>{{$post->body}}</p>
 
 <p class="reactions">
   <a href="{{route('post.show', $post->id)}}">reacties ({{App\Post::commentCounter($post->id)}})</a>
