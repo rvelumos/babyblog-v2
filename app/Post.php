@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Comment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -42,5 +43,12 @@ class Post extends Model
      public function getPathAttribute($value){
         return $this->directory . $value;
 
+     }
+
+     public static function commentCounter($id){
+
+      $comments = Comment::where('post_id', $id)->count();
+       
+      return ($comments);
      }
 }

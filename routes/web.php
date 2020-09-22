@@ -21,5 +21,10 @@ use App\Photoalbum;
 //});
 
 Route::get('/', 'PostController@index')->name('post.index');
-Route::get('/post/{id}', 'PostController@show')->name('post');
-//Route::get('/fotoalbum/', 'PhotoalbumController@index')->name('photoalbum.index');
+Route::get('/post/{id}', 'PostController@show')->name('post.show');
+
+//photo album
+Route::get('/fotoalbum/', 'PhotoalbumController@index')->name('photoalbum.index');
+
+// admin section
+Route::get('/admin', 'AdminController@index')->name('admin.index');

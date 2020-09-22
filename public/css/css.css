@@ -13,7 +13,6 @@ body {
 	line-height:20px;
 	margin:0px;
 	overflow-x:hidden;
-	text-align:center;
 	width:100%;
 }
 
@@ -36,6 +35,7 @@ p{
 	font-family: verdana;
 	font-size:14px;	
 	line-height:18px;
+	text-align:left !important;
 }
 
 textarea{
@@ -88,92 +88,90 @@ p.menu_link a:hover{
 	color:#aba;
 }
 
-div.bg_holder{
+#page-top{
 	background-image:url(../images/bg_top.png);
-	height:259px;
-	margin: 0 auto 0 auto;
-	overflow:hidden;
-	width: 1197px;
+	height:259px;		
 }
 
-div.main_container{
+div.wrapper{
 	background-image:url(../images/middle_repeat.png);
 	background-repeat:repeat-y;
+	margin: 10px auto;
 	min-height:100px;
 	overflow:auto;		
 	width: 1197px;
 }
 
-div.main_container div.top_container{
+div.wrapper div.top_container{
 	margin: 0 auto 0 auto;
 	max-width:925px;
 }
 
-div.main_container div.top_container table.zoekform{
+div.wrapper div.top_container table.zoekform{
 	float:right;	
 }
 
-div.main_container div.top_container table.zoekform input{
+div.wrapper div.top_container table.zoekform input{
 	background-color:#d8eefa;
 	border: 3px dashed white;
 	color:#99a6c4;	
 }
 
-div.main_container div.top_container table.zoekform .submit{	
+div.wrapper div.top_container table.zoekform .submit{	
   max-width:80px;
 }
 
-div.main_container div.top_container table.zoekform .field{
+div.wrapper div.top_container table.zoekform .field{
 	background-color:#efefef;
 	color:#bbb;
 }
 
-div.main_container div.top_container div.menu_content{
+div.wrapper div.top_container div.menu_content{
 	background-color:#d8eefa;
 	float:left;
 	height:40px;
 	width:895px;
 }
 
-div.main_container div.extra_container{
+div.wrapper div.extra_container{
 	margin:0px auto;
 	text-align:left;
 	width:859px;
 }
 
-div.main_container div.left_container{
+div.wrapper div.left_container{
 	float:left;
 	margin-left:20px;
 	text-align:left;
 	width:650px;
 }
 
-div.main_container div.right_container{
+div.wrapper div.right_container{
 	float:right;
 	text-align:left;
 	max-width:150px;
 }
 
-div.main_container div.right_container .titel{
+div.wrapper div.right_container .titel{
 	color:#59a6c4;
 	font-size:14px;
 	font-weight:bold;
 }
 
-div.main_container div.right_container div.archive ul li{
+div.wrapper div.right_container div.archive ul li{
 	list-style:none;
 	list-style-image:url('https://www.ronald-designs.nl/babyblog/images/arrow_right.gif');
 }
 
-div.main_container div.right_container div.category a,
-div.main_container div.right_container div.archive ul li a{
+div.wrapper div.right_container div.category a,
+div.wrapper div.right_container div.archive ul li a{
 	color:#99a6c4;
 	font-size:12px;
 	text-decoration:none;
 }
 
-div.main_container div.right_container div.category a:hover,
-div.main_container div.right_container div.archive ul li a:hover{
+div.wrapper div.right_container div.category a:hover,
+div.wrapper div.right_container div.archive ul li a:hover{
 	color:#666;
 }
 
@@ -264,22 +262,23 @@ div.content_items{
 
 div.blog_item{
 	float:left;
+	text-align:left;
 	width: 600px;
 }
 
 div.blog_item .blog_top{
 	float:left;
-	padding:5px;
+	padding:5px 0;
 	width:100%;
 }
 
-div.blog_item .blog_top .top_titel a{
+div.blog_item .blog_top .top_title a{
 	color:#59a6c4;
 	float:left;
 	font-size:16px;
 	font-weight:bold;
 	line-height:20px;
-	margin: 5px 5px 0px 5px;
+	margin: 5px 0;
 	text-decoration:none;
 	width:100%;
 }

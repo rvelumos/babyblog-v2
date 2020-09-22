@@ -9,11 +9,9 @@ class PostController extends Controller
 {
     public function index()
     {
-    $posts = Post::all();
+    $posts = Post::orderBy('created_at', 'DESC')->paginate(10);
     
-    foreach($posts as $post){
-        echo $post->title;
-    }
+    setlocale(LC_ALL, 'nl_NL');
 
      return view('posts', compact('posts'));
 
@@ -86,4 +84,7 @@ class PostController extends Controller
     {
         //
     }
+
+
+
 }
