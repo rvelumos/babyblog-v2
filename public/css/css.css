@@ -27,20 +27,15 @@ img{
 }
 
 a{
-		outline:none;
+	outline:none;
 }
 
 p{
 	color:#666;
 	font-family: verdana;
 	font-size:14px;	
-	line-height:18px;
+	line-height:23px;
 	text-align:left !important;
-}
-
-textarea{
-	width:350px;
-	height:200px;
 }
 
 .submit{
@@ -69,24 +64,66 @@ p.menu_link{
 	float:left;
 	margin:0px;
 }
+ 
+div.form_container{ 
+	float:right;
+}
 
+div.content_reactions{
+	background-color:#fcfcfc;
+	border-radius:5px;
+	border: 1px solid #efefef;
+	float:left;
+}
+
+div.form_reactions_container textarea,
+div.form_reactions_container .field{
+	width:100%;
+}
+
+div.form_reactions_container textarea,
+div.form_reactions_container .field,
+div.form_container .field{ 
+	background-color:#fefefe;
+	border:1px solid #efefef;
+	padding:6px;
+}
 
 p.menu_link a{
 	background-color:#d8eefa;
-	border:3px dashed white;
-	float:left;
-	font-weight:bold;
-	margin:3px 20px;
-	padding: 5px 20px;
+	float:left;	
+	margin:0 20px;
+	padding: 25px;
 	text-decoration:none;
+	text-transform: uppercase;
 	color:#95B3C4;
 }
 
 p.menu_link a:hover{
-	background-color:#EDF3FF;
+	background-color:#a2c5d8;	
 	text-decoration:none;
-	color:#aba;
+	color:#ffffff;
 }
+
+#navigation{	
+	background-color:#d8eefa;
+	max-width: 1000px;
+	margin: 0 auto;
+	width:98%;
+}
+
+.sticky {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-top: 0 !important;
+	position: fixed;
+	top: 0;
+	width: 98%;
+  }
+  
+  .sticky + .container-fluid {
+	margin-top: 80px !important;
+  }
 
 #page-top{
 	background-image:url(../images/bg_top.png);
@@ -96,15 +133,21 @@ p.menu_link a:hover{
 div.wrapper{
 	background-image:url(../images/middle_repeat.png);
 	background-repeat:repeat-y;
-	margin: 10px auto;
+	margin: 0 auto;
 	min-height:100px;
 	overflow:auto;		
-	width: 1197px;
 }
 
-div.wrapper div.top_container{
-	margin: 0 auto 0 auto;
-	max-width:925px;
+div.wrapper .container-fluid{
+	padding:0 !important;
+	max-width:1000px;
+	width: 98% !important;
+}
+
+div.wrapper div.top_container{	
+	background-color:#d8eefa;
+	height:75px;
+	width:100%;
 }
 
 div.wrapper div.top_container table.zoekform{
@@ -127,10 +170,10 @@ div.wrapper div.top_container table.zoekform .field{
 }
 
 div.wrapper div.top_container div.menu_content{
-	background-color:#d8eefa;
-	float:left;
-	height:40px;
-	width:895px;
+	background-color:#d8eefa;	
+	margin: 0 auto;
+	height:70px;
+	width:98%;
 }
 
 div.wrapper div.extra_container{
@@ -257,38 +300,55 @@ div.poll div.line{
 /***** blog items ****/
 
 div.content_items{
-	padding:10px 10px 10px 0px;	
+	margin:10px auto;
+	max-width:1000px;
+	width:98%;
 }
 
+div.content_items .content_author{
+	clear:both;
+	float:left;
+}
+
+div.search,
 div.blog_item{
+	background-color: #fcfcfc;
+	border-radius: 8px;	
+	border: 1px solid #eee;
+	box-shadow: 2px 2px 4px #ddd;
 	float:left;
 	text-align:left;
-	width: 600px;
+	width: 98%;
 }
 
-div.blog_item .blog_top{
+div.blog_item .content_top{
 	float:left;
 	padding:5px 0;
-	width:100%;
+	width:98%;
 }
 
-div.blog_item .blog_top .top_title a{
+div.blog_item .content_body{
+	float:left;
+	font-weight:300;
+	line-height:22px;
+	margin:10px 0;
+}
+
+div.blog_item .content_top .content_top_title a{
 	color:#59a6c4;
 	float:left;
-	font-size:16px;
-	font-weight:bold;
-	line-height:20px;
+	font-size:23px;
+	line-height:30px;
 	margin: 5px 0;
 	text-decoration:none;
 	width:100%;
 }
 
-div.blog_item .blog_top .top_datum{
+div.blog_item .content_date{
 	color:#999;
 	clear:left;
-	float:left;
-	font-size:10px;
-	margin: 0px 5px;
+	float:right;
+	font-size:10px;	
 	width:100%;
 }
 
@@ -302,8 +362,16 @@ div.blog_item .image .ieshadow1{
 	float:left;
 }
 
-div.image_content div.reacties,
-div.blog_item div.reacties{
+div.content_reactions{
+	width:98%;
+}
+
+.content_reactions div.form_reactions_container{	
+	width:98%;
+}
+
+div.image_content div.content_reactions,
+div.blog_item div.content_reactions{
 	clear:left;
 	color:#666;
 	font-size:11px;
@@ -427,22 +495,32 @@ div.reactie_holder .reactie_midden{
 		width:580px;
 }
 
-div.blog_item table.reactie_form{
+div.blog_item_details{	
+	float: left;
+	margin: 50px auto;
+	max-width:1000px;
+	width:98%;
+}
+
+div.blog_item_details table.reaction_form{
 	clear:left;
 	float:left;
 	width:600px;
 }
 
-div.blog_item table.reactie_form .medium_titel{
+div.blog_item_details table.reaction_form .medium_titel{
 	color:#99a6c4;
 	font-weight:bold;
 }
 
-div.blog_item div.reacties{
+div.blog_item_details .content_reactions,
+div.blog_item .content_reactions{
 	color:#59a6c4;
+	float:left;
 }
 
-div.blog_item div.reacties a{
+div.blog_item_details .content_reactions a,
+div.blog_item .content_reactions a{
 	color:#59a6c4;
 	text-decoration:none;
 }
@@ -634,6 +712,5 @@ div.album_content div.nav_bottom .number{
 div.bottom_content{
 	background-image:url(../images/bg_bottom.png);
 	height:279px;
-	margin:0px auto;
-	width:1197px;
+	margin:0px auto;	
 }

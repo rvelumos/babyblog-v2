@@ -16,27 +16,27 @@
 
 @foreach ($posts as $post)
    <!-- Title -->
-   <div class="blog_item">
-     <div class="py-3 blog_top">
-        <h1 class="my-4 top_title"><a href="{{route('post.show', $post->id)}}">{{$post->title}}</a></h1>
+   <div class="blog_item p-4 my-3" >
+     <div class="content_top">
+        <h3 class="content_top_title"><a href="{{route('post.show', $post->id)}}">{{$post->title}}</a></h3>
       </div>
 
 <!-- Author -->
-<p class="lead">
+<p class="content_author">
   by
   <a href="#">{{$post->uploader}}</a>
 </p>
 
 <!-- Date/Time -->
-<p>{{$post->created_at->diffForHumans()}}</p>
+<p class='content_date'>{{$post->created_at->diffForHumans()}}</p>
 
 <!-- Preview Image -->
 <img class="img-fluid rounded" src="{{$post->image_path}}" alt="">
 
 <!-- Post Content -->
-<p class="lead">{{$post->body}}</p>
+<p class='content_body'>{{Str::limit($post->body, 300)}}</p>
 
-<p class="reactions">
+<p class="content_reactions mt-3">
   <a href="{{route('post.show', $post->id)}}">reacties ({{App\Post::commentCounter($post->id)}})</a>
 </p>
 </div>

@@ -6,43 +6,42 @@
 
 @if(isset($search_phrase))
 
-<div class='search my-5 p-3 bg-light' style='float:left; width:98%'>
-<h5>
+<div class='search my-5 p-3' style='float:left; width:98%'>
+<p class='text-success'>
 Aantal gevonden zoekresultaten: <b>{{$count}}</b>. Je hebt gezocht op:<b> {{$search_phrase}}</b>
-</h5>
+</p>
 </div>
 
 @endif
 
 @foreach ($posts as $post)
    <!-- Title -->
-   <div class="blog_item">
-     <div class="py-3 blog_top">
-        <h1 class="my-4 top_title"><a href="{{route('post.show', $post->id)}}">{{$post->title}}</a></h1>
+   <div class="blog_item p-4 my-3" >
+     <div class="content_top">
+        <h3 class="content_top_title"><a href="{{route('post.show', $post->id)}}">{{$post->title}}</a></h3>
       </div>
 
 <!-- Author -->
-<p class="lead">
+<p class="content_author">
   by
   <a href="#">{{$post->uploader}}</a>
 </p>
 
 <!-- Date/Time -->
-<p>{{$post->created_at->diffForHumans()}}</p>
+<p class='content_date'>{{$post->created_at->diffForHumans()}}</p>
 
 <!-- Preview Image -->
 <img class="img-fluid rounded" src="{{$post->image_path}}" alt="">
 
 <!-- Post Content -->
-<p>{{$post->body}}</p>
+<p class='content_body'>{{$post->body}}</p>
 
-<p class="reactions">
+<p class="content_reactions mt-3">
   <a href="{{route('post.show', $post->id)}}">reacties ({{App\Post::commentCounter($post->id)}})</a>
 </p>
 </div>
 
 <div class="line"></div>
-
 @endforeach
 
 </div>
