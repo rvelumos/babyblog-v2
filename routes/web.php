@@ -25,14 +25,19 @@ Auth::routes();
 Route::get('/', 'PostController@index')->name('post.index');
 Route::get('/post/zoek', 'PostController@search')->name('posts.search');
 Route::put('/post/zoek', 'PostController@search')->name('posts.search');
-Route::get('/post/{id}', 'PostController@show')->name('post.show');
-Route::put('/post/{id}', 'commentController@store')->name('comment.insert');
 
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/post/{id}', 'PostController@show')->name('post.show');
+    Route::put('/post/{id}', 'commentController@store')->name('comment.insert');
+});
 //Route::get('/post/{id}/', 'commentController@store')->name('comment.insert');
 
 //photo album
 Route::get('/fotoalbum/', 'PhotoalbumController@index')->name('photoalbum.index');
-//Route::get('/fotoalbum/{album_id}', 'PhotoalbumController@index')->name('photoalbum.index');
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/fotoalbum/{album_id}', 'PhotoalbumController@show')->name('photoalbum.show');
+    Route::put('/fotoalbum/{album_id}', 'commentController@store')->name('comment.insert');
+});
 //Route::get('/fotoalbum/{album_id}/{photo_id}', 'PhotoalbumController@index')->name('photoalbum.photo.index');
 
 // admin section

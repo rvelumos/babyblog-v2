@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Photoalbum;
 
 use Illuminate\Http\Request;
 

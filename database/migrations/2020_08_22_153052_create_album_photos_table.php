@@ -16,11 +16,12 @@ class CreateAlbumPhotosTable extends Migration
         Schema::create('album_photos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image_path');
             $table->string('description');
-            $table->string('uploader');                        
-            $table->integer('album_id')->nullable()->index();
-            $table->integer('viewed')->nulllable();
+            $table->string('path');            
+            $table->string('thumb');
+            $table->integer('status');                        
+            //$table->integer('album_id')->nullable()->index();
+            //$table->integer('viewed')->nulllable();
             $table->integer('status');
             $table->timestamps();
         });

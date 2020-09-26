@@ -15,9 +15,9 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->integer("category_id")->nullable()->index();
-            $table->integer("tag_id")->nullable()->index();
+            $table->string("title");            
+            $table->foreignId('category_id')->constraint()->onDelete('cascade');
+            $table->foreignId('tag_id')->constraint()->onDelete('cascade');
             $table->text("body");
             $table->string("image_path");
             $table->integer('status');

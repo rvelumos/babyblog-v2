@@ -15,6 +15,11 @@ class CreatePhotoalbumsTable extends Migration
     {
         Schema::create('photoalbums', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->string('path')->nullable();
+            $table->string('thumb');
+            $table->integer('status');
             $table->timestamps();
         });
     }

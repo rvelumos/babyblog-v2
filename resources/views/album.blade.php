@@ -3,28 +3,20 @@
 @section('content')
 
    <!-- Title -->
-   <div class="blog_item_details p-4 my-3" >
-     <div class="content_top">
-        <h1 class="content_top_title">{{$post->title}}</h1>
+   <div class="album_item_details p-4 my-3" >
+     <div class="album_top">
+        <h1 class="album_top_title">{{$album->name}}</h1>
 
-<!-- Author -->
-<p class="content_author">
-  by
-  <a href="#">{{$post->uploader}}</a>
-</p>
+<p class="album_body">{{$album->description}}</p>
 
-<hr>
 
-<!-- Date/Time -->
-<p class='content_date'>{{$post->created_at->diffForHumans()}}</p>
-
-<hr>
+<hr />
 
 <!-- Preview Image -->
-<img class="content_image" src="{{$post->image_path}}" alt="" />
+<img class="album_image" src="{{$album->image_path}}" alt="" />
 
 <!-- Post Content -->
-<p class="content_body">{{$post->body}}</p>
+
 
 <hr style='border-top: 2px dashed #efefef' class='mt-5' />
 
@@ -34,7 +26,7 @@
 
 </div>
 
-<h2 class="content_top_title">Reageren</h2>
+<h2 class="album_top_title">Reageren</h2>
 
 <!-- reaction form -->
 
@@ -42,32 +34,31 @@
 <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('stored_message') }}</p>
 @endif
 
-<div class="content_reactions mt-3">
+<div class="album_reactions mt-3">  
 <div class="form_reactions_container p-4 my-4">
 
-    @if(count($errors) > 0)
+@if(count($errors) > 0)
 
-    <div class="alert alert-danger">
+<div class="alert alert-danger">
 
-    <ul>
-    @foreach($errors->all() as $error)
-      <li>
-        {{$error}}
-      </li>
-    @endforeach
+<ul>
+@foreach($errors->all() as $error)
+  <li>
+    {{$error}}
+  </li>
+@endforeach
 
+</ul>
 
-    </ul>
+</div>
+@endif
 
-    </div>
-    @endif
-
-    {!! Form::open(['method'=>'PUT', 'route'=> array('post.show', $post->id)]) !!}
+    {!! Form::open(['method'=>'PUT', 'route'=> array('photoalbum.show', $album->id)]) !!}
     
     {{ csrf_field() }}
     
-    {{ Form::hidden('post_id', $post->id) }}
-    {{ Form::hidden('section', "blog") }}
+    {{ Form::hidden('album_id', $album->id) }}
+    {{ Form::hidden('section', "album") }}
            <div class='form-group mt-2'>                
                 {!! Form::label('name','Naam') !!}                
             </div>          
@@ -88,6 +79,7 @@
 
     {!! Form::close() !!}
 
+    
   
 </div>
 

@@ -42,19 +42,34 @@ class CommentController extends Controller
     {
         //die($request->input('name'));
         
+        //both posts & album section can insert reactions with validation
+
+
+        $this->validate($request, [
+            'name' => 'required',
+            'message' => 'required'
+        ]);
+
         $comment = new comment();
         $comment->name = $request->input('name');
-        $comment->post_id = $request->input('post_id');
+        if($request->input('post_id')!=""){
+            $comment->post_id = $request->input('post_id');
+            $id=$comment->post_id;
+        }
+        if($request->input('album_id')!=""){
+            $comment->album_id = $request->input('album_id');
+            $id=$comment->album_id;
+        }
         $comment->message = $request->input('message');
         $comment->ip = $_SERVER['REMOTE_ADDR'];
-        $comment->section = 'blog';
-        $comment->save();
+        $comment->section = $request->input('section');
+        $comment->save();        
 
-        $post_id=$comment->post_id;
-
-        Session::flash('flash_message', 'Reactie toegevoegd!');
+        Session::flash('stored_message', 'Reactie toegevoegd!');
+        Session::flash('alert-class', 'alert-success'); 
         
-        return route('post.show', compact('post_id'));
+        //return view('post', compact('id'));
+        return redirect()->route('post.show', ['id' => $id]);
     }
 
 
