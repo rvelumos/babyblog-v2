@@ -13,7 +13,7 @@ class PostController extends Controller
     
     setlocale(LC_ALL, 'nl_NL');
 
-     return view('posts', compact('posts'));
+     return view('posts.posts', compact('posts'));
 
        /**
      * Show the form for creating a new resource.
@@ -48,7 +48,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        return view('post', compact('post'));
+        return view('posts.post', compact('post'));
     }
 
     /**
@@ -92,7 +92,7 @@ class PostController extends Controller
 
         $search_phrase = $request->input('search_field');
 
-        $posts = Post::where('body', 'like', '%' . $search_phrase . '%')->get();
+        $posts = Post::where('title', 'like', '%' . $search_phrase . '%')->get();
         $count = $posts->count();
 
         return view('posts.results', compact('search_phrase', 'posts', 'count'));

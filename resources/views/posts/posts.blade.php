@@ -31,7 +31,9 @@
 <p class='content_date'>{{$post->created_at->diffForHumans()}}</p>
 
 <!-- Preview Image -->
-<img class="img-fluid rounded" src="{{$post->image_path}}" alt="">
+@if($post->image_path != null)
+<img class="img-fluid rounded p-3" style="background-color:white; border:1px solid #eee; max-width:300px;" src="{{$post->image_path}}" alt="">
+@endif
 
 <!-- Post Content -->
 <p class='content_body'>{{Str::limit($post->body, 300)}}</p>
@@ -45,6 +47,12 @@
 
 @endforeach
 
+<div class="pagination">
+{{ $posts->links() }}
 </div>
+
+</div>
+
+
 
 @endsection

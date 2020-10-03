@@ -21,8 +21,7 @@ class CreateAlbumPhotosTable extends Migration
             $table->string('thumb');
             $table->integer('status');                        
             //$table->integer('album_id')->nullable()->index();
-            //$table->integer('viewed')->nulllable();
-            $table->integer('status');
+            //$table->integer('viewed')->nulllable();            
             $table->timestamps();
         });
     }

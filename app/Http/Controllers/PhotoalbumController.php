@@ -9,11 +9,11 @@ class PhotoalbumController extends Controller
 {
     public function index()
     {
-    $albums = Photoalbum::orderBy('created_at', 'DESC')->paginate(12);
+    $albums = Photoalbum::orderBy('created_at', 'DESC')->get();
     
     setlocale(LC_ALL, 'nl_NL');
 
-     return view('albums', compact('albums'));
+     return view('photoalbums.albums', compact('albums'));
 
        /**
      * Show the form for creating a new resource.
@@ -48,7 +48,7 @@ class PhotoalbumController extends Controller
     {
         $album = Photoalbum::findOrFail($id);
 
-        return view('album', compact('album'));
+        return view('photoalbums.album', compact('album'));
     }
 
     /**

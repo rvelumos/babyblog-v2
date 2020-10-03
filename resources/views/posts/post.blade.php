@@ -87,8 +87,9 @@
             </div>
 
     {!! Form::close() !!}
-
-  
+  </div>
 </div>
+
+{{App\Post::getComments($post->id, 'post_id')}}
 
 @endsection

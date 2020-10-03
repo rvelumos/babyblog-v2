@@ -78,9 +78,9 @@
             </div>
 
     {!! Form::close() !!}
-
-    
-  
+  </div>
 </div>
+
+{{App\Post::getComments($album->id, 'album_id')}}
 
 @endsection

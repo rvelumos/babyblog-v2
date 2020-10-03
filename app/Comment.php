@@ -10,4 +10,8 @@ class Comment extends Model
         'name',
         'message',        
     ];
+
+    public function posts(){
+        return $this->belongsTo('App\Post');
+    }
 }
