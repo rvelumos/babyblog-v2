@@ -43,7 +43,9 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
+        $this->mapPostRoutes();
+        $this->mapPhotoalbumRoutes();
+        $this->mapAdminRoutes();
         $this->mapWebRoutes();
 
         //
@@ -61,6 +63,27 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+    }
+
+    protected function mapPostRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/post/post.php'));
+    }
+
+    protected function mapPhotoalbumRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/photoalbum/photoalbum.php'));
+    }
+
+    protected function mapAdminRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/admin/admin.php'));
     }
 
     /**
