@@ -14,6 +14,8 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     return view('admin.posts.posts');
     }
 
     public function create()
