@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -24,7 +26,7 @@ class PostController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -35,7 +37,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|min:6',
+            'body' => 'required|min:40',
+        ]);
+
+
+        $post = new post();
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->author = Auth::user()->name;
+        $post->category_id = $request->input('category_id');        
+
+        $post->save();
+
+        Session::flash('stored_message', 'Blogitem toegevoegd!');
+        Session::flash('alert-class', 'alert-success'); 
+
+        //return view('admin.posts.edit', compact('post', $post->id));
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -59,7 +79,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -70,8 +92,30 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {        
+        $this->validate($request, [
+            'title' => 'required|min:6',
+            'body' => 'required|min:40',
+        ]);
+
+
+        $post = new post();
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->category_id = $request->input('category_id');        
+
+        Post::where('id', $id)
+                ->update(['title' => $post->title,
+                         'body'=>$post->body,
+                         'status'=>$post->status]
+                        );      
+
+        Session::flash('stored_message', 'Blogitem aangepast!');
+        Session::flash('alert-class', 'alert-success'); 
+
+        //return view('admin.posts.edit', compact('post', $post->id));
+        return redirect()->route('admin.posts.index');
+        
     }
 
     /**
@@ -84,7 +128,13 @@ class PostController extends Controller
 
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        Session::flash('stored_message','Blogitem is succesvol verwijderd');
+        Session::flash('alert-class', 'alert-success'); 
+
+        return back();
     }
 
     public function search(request $request)

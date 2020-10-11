@@ -41,6 +41,12 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment', 'post_id');
     }
+
+    public function categories(){
+
+        return $this->morphToMany('App\Category');
+
+    }
     
     
     public static function scopeLatest($query){

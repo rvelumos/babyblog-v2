@@ -77,10 +77,11 @@
 
             <div class='form-group mt-2'>                
             {!! Form::label('message','Bericht') !!}            
-            </div>                
+            </div>     
+                       
             <div class='form-group'>                
             {!! Form::textarea('message', null, ['class'=>'textarea']) !!}                                  
-            </div>                
+            </div>                            
 
             <div class='form-group mt-2'>                
                 {!! Form::submit('submit', ['class'=>'btn btn-primary']) !!}            

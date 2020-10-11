@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Photoalbum;
-
+use Illuminate\Support\Facades\Auth; 
 use Illuminate\Http\Request;
 
 class PhotoalbumController extends Controller
@@ -13,14 +13,18 @@ class PhotoalbumController extends Controller
     
     setlocale(LC_ALL, 'nl_NL');
 
-     return view('photoalbums.albums', compact('albums'));
+    if (Auth::check()){
+        return view('admin.photoalbums.index', compact('albums'));
+    }else{
+        return view('photoalbums.albums', compact('albums'));
+    }
+    }
 
        /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    }
+     */    
 
     public function create()
     {
@@ -48,7 +52,11 @@ class PhotoalbumController extends Controller
     {
         $album = Photoalbum::findOrFail($id);
 
-        return view('photoalbums.album', compact('album'));
+        if (Auth::check()){
+            return view('admin.photoalbums.edit', compact('albums'));
+        }else{
+            return view('photoalbums.albums', compact('albums'));
+        }        
     }
 
     /**
