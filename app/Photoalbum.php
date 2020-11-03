@@ -21,7 +21,7 @@ class Photoalbum extends Model
     {
         return $this->hasMany('App\Photoalbumphotos', 'album_id');
     }
-    
+
     public static function getPhotos($id)
     {
                
@@ -36,5 +36,13 @@ class Photoalbum extends Model
              echo "<p class='empty'>Geen reacties gevonden</p>";
          }
          echo "</div>";
+    }
+
+    public static function countAlbumPhotos($id){
+
+        $photos = Photoalbumphotos::where('album_id', $id)->count();
+       
+        return ($photos);       
+
     }
 }

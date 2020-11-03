@@ -8,7 +8,7 @@ html {
 
 
 body {	
-	font-family:verdana;
+	font-family:"Nunito", sans-serif !important;
 	font-size:13px;
 	line-height:24px !important;
 	margin:0px;
@@ -63,7 +63,7 @@ p.field_error{
 	margin:0px;
 }
 
-p.menu_link{
+p.menu_link{	
 	float:left;
 	margin:0px;
 }
@@ -92,6 +92,24 @@ div.form_container .field{
 	background-color:#fefefe;
 	border:1px solid #efefef;
 	padding:6px;
+}
+
+.admin-left-menu{
+	background-color:#fefefe;
+	float:left;
+	height:auto;
+	padding:20px;
+	width:30%;
+}
+
+.admin-left-menu .menu-item{
+	border-radius: 0;
+	border: 1px solid #efefef;
+	width:100%;
+}
+
+.admin-left-menu .menu-item a{
+	color:#aaa;
 }
 
 p.menu_link a{
@@ -395,6 +413,7 @@ div.blog_item .content_body{
 table.admin_content_items{
 	border:1px solid #eee;
 	margin:20px auto;
+	width:100%;
 }
 
 table.admin_content_items a{
@@ -418,18 +437,31 @@ table.admin_content_items td{
 	border-bottom:1px solid #eee;
 }
 
+table.admin_content_items tr{
+	background-color: #f8f9fa;
+	-webkit-transition: background-color 0.2s ease;
+	-moz-transition: background-color 0.2s ease;
+	-ms-transition: background-color 0.2s ease;
+	-o-transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease;
+}
+
 table.admin_content_items tr:hover{
 	background-color:#efefef;
 }
 
+table.admin_photoalbum_details,
 table.admin_blog_item_details{
 	border:1px solid #eee;
 	margin:30px 0;
 	width:98%;
 }
 
+table.admin_photoalbum_details select,
 table.admin_blog_item_details select,
+table.admin_photoalbum_details input[type=text],
 table.admin_blog_item_details input[type=text],
+table.admin_photoalbum_details textarea,
 table.admin_blog_item_details textarea{
 	background-color:white;
 	border:1px solid #eee;
@@ -442,20 +474,25 @@ table.admin_blog_item_details textarea{
 	width:98%;
 }
 
+table.admin_photoalbum_details input:focus,
+table.admin_photoalbum_details textarea:focus,
 table.admin_blog_item_details input:focus,
 table.admin_blog_item_details textarea:focus{
 	background-color:#f7faff;
 	border:1px solid #ddd;
 }
 
+table.admin_photoalbum_details input.btn,
 table.admin_blog_item_details input.btn{
 	width:auto;
 }
 
+table.admin_photoalbum_details label,
 table.admin_blog_item_details label{
 	color:#8daad6;
 }
 
+table.admin_photoalbum_details td,
 table.admin_blog_item_details td{
 	padding:30px;
 }

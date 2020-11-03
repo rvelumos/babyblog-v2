@@ -6,7 +6,7 @@
 <p class="alert {{ Session::get('alert-class', 'alert-info') }} m-4">{{ Session::get('stored_message') }}</p>
 @endif
 
-<a href="{{route('admin.posts.create')}}"><input type='button' class='btn btn-success m-2' value='Post toevoegen' /></a>
+<a href="{{route('admin.posts.create')}}"><input type='button' class='btn btn-success my-2' value='Post toevoegen' /></a>
 
 <table class='admin_content_items bg-light'>
 <tr>
