@@ -18,13 +18,16 @@ Route::middleware('auth')->group(function(){
   Route::put('/admin/posts/insert', 'PostController@store')->name('admin.posts.store');
 
   /* The photo album section */
-  Route::get('/admin/photoalbum', 'PhotoalbumController@index')->name('admin.photoalbums.index');
-  Route::get('/admin/photoalbum/{id}', 'PhotoalbumphotosController@index')->name('admin.photoalbumphotos.index');
+  Route::get('/admin/photoalbum', 'PhotoalbumController@index')->name('admin.photoalbums.index');  
   Route::get('/admin/photoalbum/edit/{id}', 'PhotoalbumController@edit')->name('admin.photoalbums.edit');
   Route::put('/admin/photoalbum/edit/{id}', 'PhotoalbumController@update')->name('admin.photoalbums.update');
   Route::get('/admin/photoalbum/delete/{id}', 'PhotoalbumController@destroy')->name('admin.photoalbums.delete');
   Route::get('/admin/photoalbum/insert', 'PhotoalbumController@create')->name('admin.photoalbums.create');
   Route::put('/admin/photoalbum/insert', 'PhotoalbumController@store')->name('admin.photoalbums.store');
+
+  Route::get('/admin/photoalbum/{id}', 'PhotoalbumphotosController@index')->name('admin.photoalbumphotos.index');
+  Route::get('/admin/photoalbum/{id}/insert', 'PhotoalbumphotosController@create')->name('admin.photoalbumphotos.create');
+  Route::put('/admin/photoalbum/{id}/insert', 'PhotoalbumphotosController@store')->name('admin.photoalbumphotos.store');
 
   /* Statistics */
   Route::get('/admin/stats', 'LogController@stats')->name('admin.stats.index');
