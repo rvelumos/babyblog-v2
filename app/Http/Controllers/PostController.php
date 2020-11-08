@@ -38,7 +38,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|min:6',
+            'title' => 'required|min:5',
             'body' => 'required|min:40',
         ]);
 
@@ -94,7 +94,7 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {        
         $this->validate($request, [
-            'title' => 'required|min:6',
+            'title' => 'required|min:5',
             'body' => 'required|min:40',
         ]);
 

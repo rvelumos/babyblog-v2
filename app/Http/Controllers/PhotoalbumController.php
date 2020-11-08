@@ -41,7 +41,7 @@ class PhotoalbumController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|min:6',        
+            'name' => 'required|min:5',        
         ]);
 
 
@@ -66,11 +66,11 @@ class PhotoalbumController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {        
         $album = Photoalbum::findOrFail($id);
 
         if (Auth::check() && Route::currentRouteName() == 'admin.photoalbums.index'){
-            return view('admin.photoalbums.index', compact('albums'));
+            return view('admin.photoalbums.index', compact('albums', $id));
         }else{
             return view('photoalbums.album', compact('album'));
         }        
@@ -99,7 +99,7 @@ class PhotoalbumController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|min:6',            
+            'name' => 'required|min:5',            
         ]);
 
 

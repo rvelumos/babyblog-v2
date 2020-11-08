@@ -25,7 +25,7 @@
     <td class="admin_content_author px-4 py-3"><a href="#">{{ucwords(strtolower($photoalbum->author))}}</a></td>
 
     <!-- Post Content -->
-    <td class='admin_content_body px-4 py-3'>{{Str::limit($photoalbum->description, 20)}}...</td>
+    <td class='admin_content_body px-4 py-3'>{{Str::limit($photoalbum->description, $limit = 20, $end='...')}}</td>
 
     <!-- Num images -->
     <td class='admin_content_count px-4 py-3'>{{App\Photoalbum::countAlbumPhotos($photoalbum->id)}}</td>    

@@ -88,4 +88,14 @@ class AdminController extends Controller
     {
         return view('auth.login');
     }
+
+    public function security()
+    {
+        return view('admin.security.index');
+    }
+
+    public function securityUpdate()
+    {
+        return view('admin.security.edit');
+    }
 }

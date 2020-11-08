@@ -98,8 +98,7 @@ div.form_container .field{
 	background-color:#fefefe;
 	float:left;
 	height:auto;
-	padding:20px;
-	width:30%;
+	padding:20px;	
 }
 
 .admin-left-menu .menu-item{
@@ -209,10 +208,12 @@ div.wrapper div.extra_container{
 }
 
 div.wrapper div.left_container{
+	border:1px solid #efefef;
+	box-shadow: 3px 3px 10px #efefef;
 	float:left;
-	margin-left:20px;
+	margin:20px 20px;
 	text-align:left;
-	width:650px;
+	width:300px;
 }
 
 div.wrapper div.right_container{
@@ -410,22 +411,44 @@ div.blog_item .content_body{
 	margin:20px 0 10px 0;
 }
 
+table.admin_log_items th{
+	padding:25px;
+}
+
+table.admin_log_items td{	
+	padding:15px;
+}
+
+
+table.admin_log_items td:first-child {
+	font-weight:bold;
+}
+
+table.admin_log_items .heading{
+	font-size:100%;
+	font-weight:bold;
+}
+
+table.admin_log_items,
 table.admin_content_items{
 	border:1px solid #eee;
 	margin:20px auto;
 	width:100%;
 }
 
+table.admin_log_items a,
 table.admin_content_items a{
 	color:#8daad6;
-	font-weight:b400old;
+	font-weight:bold;
 	text-decoration: none;
 }
 
+table.admin_log_items a:hover,
 table.admin_content_items a:hover{
 	color:#666;
 }
 
+table.admin_log_items th,
 table.admin_content_items th{
 	background-color:#ccc;
 	color:white;
@@ -433,10 +456,12 @@ table.admin_content_items th{
 	text-transform: uppercase;
 }
 
+table.admin_log_items td,
 table.admin_content_items td{
 	border-bottom:1px solid #eee;
 }
 
+table.admin_log_items tr,
 table.admin_content_items tr{
 	background-color: #f8f9fa;
 	-webkit-transition: background-color 0.2s ease;
@@ -446,6 +471,7 @@ table.admin_content_items tr{
 	transition: background-color 0.2s ease;
 }
 
+table.admin_log_items tr:hover,
 table.admin_content_items tr:hover{
 	background-color:#efefef;
 }

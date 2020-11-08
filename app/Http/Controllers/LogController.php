@@ -1,23 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth; 
-use App\Photoalbumphotos;
-use Illuminate\Http\Request;
 
-class PhotoalbumphotosController extends Controller
+use App\Log;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
+class LogController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $photos = Photoalbumphotos::where('album_id', $id)->get();
-                        
-        return view('admin.photoalbums.photos.index', compact('photos', 'id'));
-                
+    $logs = Log::orderBy('created_at', 'DESC')->paginate(40);    
+
+     return view('admin.logs.index', compact('logs'));
     }
 
     /**
@@ -25,9 +25,9 @@ class PhotoalbumphotosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        return view('admin.photoalbums.photos.create', compact('id'));
+        //
     }
 
     /**
@@ -44,21 +44,23 @@ class PhotoalbumphotosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Photoalbumphotos  $photoalbumphotos
+     * @param  \App\Log  $log
      * @return \Illuminate\Http\Response
      */
-    public function show(Photoalbumphotos $photoalbumphotos)
-    {
-        //
+    public function show($id)
+    {        
+        $log = Log::findOrFail($id);
+
+        return view('admin.logs.show', compact('log'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Photoalbumphotos  $photoalbumphotos
+     * @param  \App\Log  $log
      * @return \Illuminate\Http\Response
      */
-    public function edit(Photoalbumphotos $photoalbumphotos)
+    public function edit(Log $log)
     {
         //
     }
@@ -67,10 +69,10 @@ class PhotoalbumphotosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Photoalbumphotos  $photoalbumphotos
+     * @param  \App\Log  $log
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Photoalbumphotos $photoalbumphotos)
+    public function update(Request $request, Log $log)
     {
         //
     }
@@ -78,11 +80,17 @@ class PhotoalbumphotosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Photoalbumphotos  $photoalbumphotos
+     * @param  \App\Log  $log
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Photoalbumphotos $photoalbumphotos)
+    public function destroy($id)
     {
-        //
+        $log = Log::findOrFail($id);
+        $log->delete();
+
+        Session::flash('stored_message','Logitem is succesvol verwijderd');
+        Session::flash('alert-class', 'alert-success'); 
+
+        return back();
     }
 }

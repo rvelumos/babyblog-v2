@@ -25,7 +25,8 @@
     
     {{ csrf_field() }}
                
-
+    {{ Form::hidden('album_id', $id) }} 
+    
             <div class='form-group mt-2'>                
             {!! Form::label('message','Omschrijving') !!}            
             </div>                

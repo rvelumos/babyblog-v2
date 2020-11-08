@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function(){
 
   /* Log page */
   Route::get('/admin/logs', 'LogController@index')->name('admin.logs.index');
+  Route::get('/admin/logs/view/{id}', 'LogController@show')->name('admin.logs.show');
+  Route::get('/admin/logs/delete/{id}', 'LogController@destroy')->name('admin.logs.delete');
 
   /* Security */
   Route::get('/admin/security', 'AdminController@security')->name('admin.security.index');
